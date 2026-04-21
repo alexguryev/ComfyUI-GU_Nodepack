@@ -1,0 +1,9 @@
+# GU_Nodepack: user-editable list of words to EXCLUDE from LoRA trigger word detection.
+# One word per line. Lines and tail parts starting with `#` are ignored. Case-insensitive.
+# Use this when your training prompts contain recurring brand / project / slang words
+# that should NOT be surfaced as LoRA trigger words.
+#
+# Example:
+# mycompany
+# productline
+# someslang

@@ -1,0 +1,30 @@
+COG    # COG video
+F1D    # Flux1-Dev
+F1DKr  # Flux1-Krea-Dev
+F1DFl  # Flux1-Fill-Dev
+F1S    # Flux1-schnell
+F1DKx  # Flux1-Kontext-Dev
+F2D    # Flux2-Dev
+F2K    # Flux2-Klein
+FrPK   # FramePack
+HDDv   # HiDream-dev
+HDFl   # HiDream-full
+HDFs   # HiDream-fast
+HUN15  # Hunyuan 1.5
+LivP   # LivePortrait
+LTX    # LTX video
+LTX2   # LTX-2 video
+QWEN   # Qwen Image
+ReAct  # Re-Actor
+SD15   # SD 1.5
+S35M   # SD 3.5 med
+S35L   # SD 3.5 large
+SDXL   # SD XL
+SeeV2  # Seed VR2
+W21    # WAN 2.1
+W21V   # WAN 2.1 VACE
+W22    # WAN 2.2
+W22V   # WAN 2.2 VACE
+W25    # WAN 2.5
+ZIT    # Z-Image Turbo
+# add new model type codes alphabetically / no empty lines!

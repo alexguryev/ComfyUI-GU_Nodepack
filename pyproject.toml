@@ -1,0 +1,28 @@
+# pyproject.toml for ComfyUI Registry (https://registry.comfy.org).
+# Before `comfy node publish`:
+#   - fill in <github-username> in the Repository URL,
+#   - fill in <publisher-id> obtained after registering at registry.comfy.org,
+#   - keep `version` in sync with MANIFEST["version"] in ComfyUI-GU_Nodepack/__init__.py
+#     and with the git tag on GitHub Releases (e.g. v2.6.0).
+
+[project]
+name = "comfyui-gu_nodepack"
+description = "Several utility nodes for ComfyUI: LoRA management, image annotation, project organization, sampling utilities, system integration."
+version = "2.6.0"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [{ name = "Alexander Guryev" }]
+keywords = ["comfyui", "comfyui-nodes", "lora", "utilities", "image-annotation"]
+dependencies = [
+    "psutil>=5.9",
+    "requests>=2.28",
+]
+
+[project.urls]
+Homepage = "https://alexguryev.com"
+Repository = "https://github.com/alexguryev/ComfyUI-GU_Nodepack"
+
+[tool.comfy]
+PublisherId = "alexguryev"
+DisplayName = "GU Nodepack"
+Icon = ""
