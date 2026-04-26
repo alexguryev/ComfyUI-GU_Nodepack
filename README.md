@@ -117,7 +117,7 @@ If part of the source name (custom or filename) needs to be replaced, **change_f
 **name_suffix** = string appended after the name, e.g. to add filename clarifications - can be automated via an upstream input.  
 After the suffix, if **is_upscale** is on, `_upNx` is appended, where `N = up_factor`. The **up_factor** input takes a float upscale value (rounded up to an integer; values < 2 are ignored).  
 After that, the following are appended:
-* **model_type** - short label for the generative model type  
+* **model_type** - short label for the generative model type. Model codes are customizable here: *ComfyUI-GU_Nodepack\web\model_codes.txt*
 * **proc_type** - generation process type: `text-2-image`, `image-2-image`, `inpaint`, ... It is recommended to omit this for upscales, since technically upscaling is also a distinct process but affects the path/name differently.  
 * **tech_suffix** - extra info about the use of LoRA, ControlNet, DetailDaemon, Redux (preferably sourced from *GU Image Label*)  
 * **seed** - added when the corresponding node input is connected
