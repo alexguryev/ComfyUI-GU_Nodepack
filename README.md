@@ -218,6 +218,27 @@ Separately attaches an accelerating LoRA to the current incoming model. Also ret
 
 ---
 
+## Security Notes
+
+This nodepack contains one pattern that may be flagged by automated security scanners:
+
+**`prestartup_script.py` imports `aiohttp.web`** — this is used solely to monkey-patch
+`web.WebSocketResponse.prepare` in order to hook the moment a browser tab connects to ComfyUI.
+The hook calls `on_reload()`, which refreshes the LoRA file list and resets the seed-file flag
+so that users see fresh LoRA lists without restarting ComfyUI. **No custom HTTP routes are
+registered. No new endpoints are added to the server.**
+
+The patch is applied defensively: it checks the method signature before installing, wraps
+the original in a try/except, and falls back gracefully if the aiohttp API ever changes.
+
+Other patterns confirmed absent:
+- No `subprocess` or `exec()` calls anywhere in the codebase
+- No `pickle` usage
+- JS files use `fetch()` only to load the nodepack's own static `.txt` config files
+  (`proj_codes.txt`, `model_codes.txt`) — standard ComfyUI extension pattern
+
+---
+
 # License
 
 This nodepack is released under the **MIT License** — see [LICENSE](LICENSE) for the full text.
