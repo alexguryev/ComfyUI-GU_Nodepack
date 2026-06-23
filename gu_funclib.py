@@ -5,7 +5,6 @@ import hashlib
 import json
 import os
 import re
-import socket
 import shutil
 import uuid
 import zipfile
@@ -352,6 +351,7 @@ def rem_arch_tmp(extract_path):
 # #########################################################################
 
 def get_local_ip():  # get client ip-address string
+    import socket
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
         try:
             s.connect(("10.255.255.255", 1)) # fake connection

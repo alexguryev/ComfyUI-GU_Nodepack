@@ -8,7 +8,7 @@
 [project]
 name = "comfyui-gu_nodepack"
 description = "Several utility nodes for ComfyUI: LoRA management, image annotation, project organization, sampling utilities, system integration."
-version = "2.6.1"
+version = "2.6.2"
 license = { file = "LICENSE" }
 requires-python = ">=3.10"
 authors = [{ name = "Alexander Guryev" }]
