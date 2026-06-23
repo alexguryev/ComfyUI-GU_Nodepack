@@ -9,7 +9,7 @@ WEB_DIRECTORY = "./web"
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS", "WEB_DIRECTORY"]
 MANIFEST = {
     "name": "GU_Nodepack",
-    "version": (2, 6, 0), # maj:arch.changes . min:new functionality . tuning:fixes,tuning
+    "version": (2, 6, 1), # maj:arch.changes . min:new functionality . tuning:fixes,tuning
     "author": "Alexander Guryev",
     "project": "https://github.com/alexguryev/ComfyUI-GU_Nodepack",
     "description": "Several utility nodes for ComfyUI: LoRA management, image annotation, project organization, sampling utilities, system integration.",

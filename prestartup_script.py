@@ -1,8 +1,6 @@
 # GU_Nodepack (C) Alexander Guryev, 2026 | https://alexguryev.com
 
-from aiohttp import web
 import folder_paths
-import inspect
 import os
 import threading
 
@@ -45,7 +43,7 @@ def FillLoraList(root=None):
 
 _StateLock = threading.RLock()
 
-LoraList = FillLoraList() # init in case of websocket intercept failed
+LoraList = FillLoraList()
 def GetLoraList():
     global LoraList
     return LoraList
@@ -69,41 +67,4 @@ def on_reload(): # file lists refill upon ComfyUI browser page refresh
         SeedFileLoaded = False
 
 # #########################################################################################
-
-# intercept UI enable (WebSocket) — defensive patching with signature check
-PreOK = False
-orig_prepare = None
-
-try:
-    orig_prepare = web.WebSocketResponse.prepare
-    # verify patched method has >=2 params (arity check). Name of the 'self' param varies across
-    # aiohttp versions (seen 'self' and 'ws'), so we do not check names — only that we can call
-    # it as prepare(instance, request), which requires 2+ positional params.
-    sig = inspect.signature(orig_prepare)
-    actual_params = list(sig.parameters.keys())
-    if len(actual_params) >= 2:
-        PreOK = True
-    else:
-        try:
-            import aiohttp
-            ver = aiohttp.__version__
-        except Exception:
-            ver = "unknown"
-        print(f"[GU_Nodepack] WebSocket patch skipped: prepare() arity {len(actual_params)} < 2 (aiohttp {ver}, params {actual_params})")
-except Exception as e:
-    print(f"[GU_Nodepack] WebSocket patch skipped: {type(e).__name__}: {e}")
-
-async def patched_prepare(ws, request):
-    result = await orig_prepare(ws, request)
-    try:
-        on_reload()
-    except Exception as e:
-        print(f"[GU_Nodepack] on_reload hook failed (passing through): {type(e).__name__}: {e}")
-    return result
-
-if PreOK:
-    try:
-        web.WebSocketResponse.prepare = patched_prepare
-    except (AttributeError, TypeError) as e:
-        print(f"[GU_Nodepack] WebSocket patch install failed: {type(e).__name__}: {e}")
-        PreOK = False
+# LoRA list is refreshed via INPUT_TYPES() on each /object_info request (browser reload).

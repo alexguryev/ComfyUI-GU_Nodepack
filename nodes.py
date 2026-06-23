@@ -812,37 +812,37 @@ class G_LoraStackExt:
                 "s0"         : ("STRING", {"default": "", "label_on":False}),
 
                 # "display": "slider"   -2..2
-                "lora1"    : (GetLoraList(),),
+                "lora1"    : (FillLoraList(),),
                 "lora_str1": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "clip_str1": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "enable1"  : ("BOOLEAN", {"default": True,}),
                 "s1"       : ("STRING", {"default": "", "label_on":False}),
 
-                "lora2"    : (GetLoraList(),),
+                "lora2"    : (FillLoraList(),),
                 "lora_str2": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "clip_str2": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "enable2"  : ("BOOLEAN", {"default": True, }),
                 "s2"       : ("STRING", {"default": "", "label_on":False}),
 
-                "lora3"    : (GetLoraList(),),
+                "lora3"    : (FillLoraList(),),
                 "lora_str3": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "clip_str3": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "enable3"  : ("BOOLEAN", {"default": True, }),
                 "s3"       : ("STRING", {"default": "", "label_on":False}),
 
-                "lora4"    : (GetLoraList(),),
+                "lora4"    : (FillLoraList(),),
                 "lora_str4": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "clip_str4": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "enable4"  : ("BOOLEAN", {"default": True, }),
                 "s4"       : ("STRING", {"default": "", "label_on":False}),
 
-                "lora5"    : (GetLoraList(),),
+                "lora5"    : (FillLoraList(),),
                 "lora_str5": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "clip_str5": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "enable5"  : ("BOOLEAN", {"default": True,}),
                 "s5"       : ("STRING", {"default": "", "label_on":False}),
 
-                "lora6"    : (GetLoraList(),),
+                "lora6"    : (FillLoraList(),),
                 "lora_str6": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "clip_str6": ("FLOAT", {"default": 1.0, "min": -100.0, "max": 100.0, "step": 0.05}),
                 "enable6"  : ("BOOLEAN", {"default": True,}),
@@ -968,7 +968,7 @@ class G_TurboLora:
             "required": {
                 "model"       : ("MODEL",),
                 "clip"        : ("CLIP",),
-                "turbo_lora"  : (GetLoraList(),),
+                "turbo_lora"  : (FillLoraList(),),
                 "steps_normal": ("INT", {"default": 25, "min": 1, "max": 100}),
                 "steps_turbo" : ("INT", {"default": 8, "min": 1, "max": 100}),
                 "enable"      : ("BOOLEAN", {"default": True, }),
