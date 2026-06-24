@@ -255,7 +255,7 @@ def SubscribeImage(img, lab_tech, lab_pos, lab_neg, lab_gen, font, font_size):
 def GetModelVerInfo(hash_value):
     api_url = f"https://civitai.com/api/v1/model-versions/by-hash/{hash_value}"
     try:
-        response = requests.get(api_url) # try because error on some workstation ???
+        response = requests.get(api_url, timeout=10) # try because error on some workstation ???
     except (requests.RequestException, ConnectionError):
         return None
 
