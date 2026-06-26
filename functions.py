@@ -16,7 +16,7 @@ import requests
 import threading
 import torch
 
-from .gu_funclib import make_unique_filename, get_datetime_str, calc_SHA256, strlist_to_str
+from gu_funclib import make_unique_filename, get_datetime_str, calc_SHA256, strlist_to_str
 from .prestartup_script import *
 
 _StateLock = threading.RLock()
